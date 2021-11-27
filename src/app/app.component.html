@@ -1,9 +1,12 @@
 <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">bezKoder</a>
+        <a href="#" class="navbar-brand">Sinfori</a>
         <ul class="navbar-nav mr-auto" routerLinkActive="active">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="/home" class="nav-link" routerLink="home">Home </a>
+            </li> -->
+            <li class="nav-item">
+                <a href="/inventory" class="nav-link" routerLink="inventory">Inventory </a>
             </li>
         </ul>
 
@@ -14,9 +17,9 @@
         </ul>
 
         <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href class="nav-link" (click)="logout()">LogOut</a>
             </li>

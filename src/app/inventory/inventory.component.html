@@ -1,1 +1,36 @@
-<p>inventory works!</p>
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link" [class.active]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW"
+                id="nav-data-viewer-tab" data-toggle="tab" (click)="showSelectedTab(inventoryTabsConsts.ROOMS_OVERVIEW)"
+                role="tab" aria-controls="nav-home" aria-selected="true">Rooms overview</a>
+
+            <a class="nav-item nav-link" [class.active]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW"
+                id="nav-power-user-tab" data-toggle="tab"
+                (click)="showSelectedTab(inventoryTabsConsts.INVENTORY_OVERVIEW)" role="tab" aria-controls="nav-profile"
+                aria-selected="false">Inventory
+                overview</a>
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" [class.show]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW"
+            [class.active]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW" id="nav-data-viewer" role="tabpanel"
+            aria-labelledby="nav-data-viewer-tab">
+            <ng-template [ngIf]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW">
+                1
+            </ng-template>
+
+        </div>
+        <div class="tab-pane fade" [class.show]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW"
+            [class.active]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW" id="nav-power-user" role="tabpanel"
+            aria-labelledby="nav-power-user-tab">
+            <ng-template [ngIf]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW">
+                2
+            </ng-template>
+
+        </div>
+
+    </div>
+
+</div>

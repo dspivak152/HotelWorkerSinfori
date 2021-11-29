@@ -9,12 +9,17 @@ import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InventoryOverviewComponent } from './inventory-overview/inventory-overview.component';
+import { RoomsOverviewComponent } from './rooms-overview/rooms-overview.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    InventoryComponent
+    InventoryComponent,
+    RoomsOverviewComponent,
+    InventoryOverviewComponent
   ],
   imports: [
     BrowserModule,

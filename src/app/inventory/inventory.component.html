@@ -18,7 +18,24 @@
             [class.active]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW" id="nav-data-viewer" role="tabpanel"
             aria-labelledby="nav-data-viewer-tab">
             <ng-template [ngIf]="currentTab == inventoryTabsConsts.ROOMS_OVERVIEW">
-                1
+
+                <table class="table table-responsive table-hover">
+                    <caption>List of rooms</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Room number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let room of this.hotelDevices; index as i">
+                            <th scope="row">{{i + 1}}</th>
+                            <td>{{room.roomNumber}}</td>
+                            <td>{{room.missingProducts | json}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <app-rooms-overview></app-rooms-overview> -->
             </ng-template>
 
         </div>
@@ -26,7 +43,7 @@
             [class.active]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW" id="nav-power-user" role="tabpanel"
             aria-labelledby="nav-power-user-tab">
             <ng-template [ngIf]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW">
-                2
+                <app-inventory-overview></app-inventory-overview>
             </ng-template>
 
         </div>

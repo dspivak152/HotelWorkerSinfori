@@ -18,7 +18,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API, { username: username, password: password }, httpOptions).pipe(
-      catchError(this.handleError<any>('Unable to create new room')));;;
+      catchError(this.handleError<any>('Unable to create new room')));
   }
 
   handleError<T>(operation = 'operation', result?: T) {

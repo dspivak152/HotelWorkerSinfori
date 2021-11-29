@@ -25,10 +25,11 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Room number</th>
+                            <th scope="col">Products</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let room of this.hotelDevices; index as i">
+                        <tr *ngFor="let room of hotelDevices; index as i">
                             <th scope="row">{{i + 1}}</th>
                             <td>{{room.roomNumber}}</td>
                             <td>{{room.missingProducts | json}}</td>
@@ -43,7 +44,24 @@
             [class.active]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW" id="nav-power-user" role="tabpanel"
             aria-labelledby="nav-power-user-tab">
             <ng-template [ngIf]="currentTab == inventoryTabsConsts.INVENTORY_OVERVIEW">
-                <app-inventory-overview></app-inventory-overview>
+                <table class="table table-responsive table-hover">
+                    <caption>List of missing items</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Rooms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of missingItemsWithRooms; index as i">
+                            <th scope="row">{{i + 1}}</th>
+                            <td>{{product.productName}}</td>
+                            <td>{{product.rooms | json}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <app-inventory-overview></app-inventory-overview> -->
             </ng-template>
 
         </div>

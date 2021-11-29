@@ -69,8 +69,10 @@ export class InventoryComponent implements OnInit {
         }
       });
     })
-    console.log(this.missingItemsWithRooms)
+  }
 
+  refreshWindow() {
+    location.reload();
   }
 
 }
